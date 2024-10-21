@@ -2,12 +2,25 @@
   "name": "ss-ui",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc",
-    "ci": "npm run build",
-    "format": "prettier --write ."
+    "dev": "vitest",
+    "test": "vitest run",
+    "lint": "tsc",
+    "build": "tsup",
+    "ci": "npm run build && npm run check-format && npm run check-exports && npm run lint && npm run test",
+    "format": "prettier --write .",
+    "check-format": "prettier --check .",
+    "check-exports": "attw --pack . --ignore-rules=cjs-resolves-to-esm",
+    "local-release":"changeset version && changeset publish",
+    "prepublishOnly": "npm run ci"
+  },
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": "./dist/index.js",
+      "default": "./dist/index.cjs"
+    }
   },
   "publishConfig": {
     "access": "public"
@@ -20,13 +33,16 @@
     "rollup": "^0.25.8"
   },
   "devDependencies": {
+    "@arethetypeswrong/cli": "^0.16.4",
     "@babel/core": "^7.25.8",
     "@babel/preset-env": "^7.9.0",
+    "@changesets/cli": "^2.27.9",
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-commonjs": "^28.0.1",
     "@rollup/plugin-node-resolve": "^15.3.0",
     "@rollup/plugin-terser": "^0.4.4",
     "prettier": "^3.3.3",
+    "tsup": "^8.3.0",
     "typescript": "^5.6.3"
   }
 }

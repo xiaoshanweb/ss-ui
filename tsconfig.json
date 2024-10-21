@@ -16,17 +16,19 @@
     "noImplicitOverride": true,
 
     /* 如果使用TypeScript转译：*/
-    "module": "NodeNext",
-    "outDir": "./dist",
-    "rootDir": "./",
+    "module": "Preserve",
+    // "outDir": "./dist",
+    // "rootDir": "./",
     // "types":["module"],
-    "sourceMap": true,
+    // "sourceMap": true,
 
     /* 如果你正在为库构建：*/
-    "declaration": true,
+    // "declaration": true,
 
     /* 如果你正在为monorepo中的库构建：*/
-    "declarationMap": true
+    // "declarationMap": true,
+
+    "noEmit": true
   },
   "include": ["src/**/*", "index.ts"]
 }
