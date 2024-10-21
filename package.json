@@ -1,6 +1,6 @@
 {
   "name": "ss-ui",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
@@ -12,7 +12,7 @@
     "format": "prettier --write .",
     "check-format": "prettier --check .",
     "check-exports": "attw --pack . --ignore-rules=cjs-resolves-to-esm",
-    "local-release":"changeset version && changeset publish",
+    "local-release": "changeset version && changeset publish",
     "prepublishOnly": "npm run ci"
   },
   "exports": {
