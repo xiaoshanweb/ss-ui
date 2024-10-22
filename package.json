@@ -29,7 +29,7 @@
   "license": "ISC",
   "dependencies": {
     "jest": "^29.7.0",
-    "rimraf": "^3.0.2",
+    "rimraf": "^3.0.2"
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.16.4",
